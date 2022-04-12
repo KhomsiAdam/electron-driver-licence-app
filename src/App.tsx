@@ -1,10 +1,16 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import { QuizProvider } from './context/QuizScoreContext';
 import './index.css';
+import Home from './pages/Home';
 
 const App: FC = () => {
-	return (
-		<h1 className='font-bold'>Hi Electron</h1>
-	)
+  return (
+    <main className='h-screen bg-lightBlue'>
+      <QuizProvider>
+        <Home />
+      </QuizProvider>
+    </main>
+  );
 };
 
 export default App;

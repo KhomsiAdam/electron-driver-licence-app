@@ -1,7 +1,7 @@
 [
   {
     "category": "A",
-    "type": "single",
+    "type": "multiple",
     "question": "You are about to make a right hand turn at this intersection. You have the green light. You hear a siren and then see that a fire truck will soon overtake you. You should:",
     "correctAnswer": "Stop and let the fire truck overtake you.",
     "incorrectAnswers": [
