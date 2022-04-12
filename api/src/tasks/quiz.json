@@ -1,0 +1,413 @@
+[
+  {
+    "category": "A",
+    "type": "single",
+    "question": "You are about to make a right hand turn at this intersection. You have the green light. You hear a siren and then see that a fire truck will soon overtake you. You should:",
+    "correctAnswer": "Stop and let the fire truck overtake you.",
+    "incorrectAnswers": [
+      "Speed up to beat the fire truck.",
+      "Continue and make the turn because you have the right of way."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "What does this sign mean?",
+    "correctAnswer": "All right lane traffic must turn right at the next intersection.",
+    "incorrectAnswers": [
+      "One way traffic ahead.",
+      "Right lane traffic may turn right or go straight ahead at the next intersection."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You must give way to pedestrians on a marked pedestrian crossing:",
+    "correctAnswer": "If there is any danger of a collision.",
+    "incorrectAnswers": [
+      "When they are crossing from your left only.",
+      "When they are crossing from your right only."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When the road is marked this way are you permitted to cross the lines and overtake?",
+    "correctAnswer": "No.",
+    "incorrectAnswers": [
+      "Yes.",
+      "Yes, only if the way ahead is clear."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "If you are caught speeding through a road work zone you will:",
+    "correctAnswer": "Be liable for a speeding fine and loss of demerit points.",
+    "incorrectAnswers": [
+      "Not receive any penalty as road works speed limits are only advisory.",
+      "Receive a warning letter in the mail."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "If turning at an intersection are you required to give way to pedestrians?",
+    "correctAnswer": "Yes, a driver turning right or left must give way to pedestrians, if there is a danger of a collision",
+    "incorrectAnswers": [
+      "Yes, only if turning right.",
+      "Yes, only if turning left."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You must use your indicator lights when:",
+    "correctAnswer": "Changing lanes or turning left or right.",
+    "incorrectAnswers": [
+      "Double parking.",
+      "Approaching a curve."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When you wish to turn left at a roundabout you indicate:",
+    "correctAnswer": "Left from start to finish.",
+    "incorrectAnswers": [
+      "Left only after you enter the roundabout.",
+      "Only if you think it necessary."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "If you hear the siren of an emergency vehicle, you must:",
+    "correctAnswer": "Take whatever action is necessary (with safety) to make way for the emergency vehicle.",
+    "incorrectAnswers": [
+      "Flash your headlights to warn other drivers.",
+      "Increase your speed to avoid the vehicle."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "How should you merge with traffic when entering a motorway?",
+    "correctAnswer": "Watch for a gap and increase your speed to safely merge with the traffic.",
+    "incorrectAnswers": [
+      "Stop, then enter the traffic quickly.",
+      "Slow down and force your way into the traffic."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "What does this sign mean?",
+    "correctAnswer": "Drive carefully, and watch out for kangaroos entering the road for the next 30 km.",
+    "incorrectAnswers": [
+      "Nature reserve 30 km ahead.",
+      "Zoo 30 km ahead."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When going on a long trip, out of the following which is the most important to do?",
+    "correctAnswer": "Get plenty of rest before starting out.",
+    "incorrectAnswers": [
+      "Have a good meal before driving.",
+      "Make sure your horn is working."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "In wet weather when it becomes hard for you to see, you should:",
+    "correctAnswer": "Turn on your headlights, slow down, and double your following distance behind the vehicle in front.",
+    "incorrectAnswers": [
+      "Flash your headlights to warn other drivers.",
+      "Turn your headlights on high beam."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You come to an intersection in Sydney with a Light Rail vehicle about to enter. What should you do?",
+    "correctAnswer": "Wait until the intersection is clear.",
+    "incorrectAnswers": [
+      "Change lanes before crossing the intersection.",
+      "Enter the intersection, but keep away from the Light Rail vehicle."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Speed limit signs (such as the one shown) tell drivers:",
+    "correctAnswer": "The maximum speed they are allowed to drive.",
+    "incorrectAnswers": [
+      "The recommended speed they are allowed to drive.",
+      "The minimum speed they are allowed to drive."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When you see children on or near the road:",
+    "correctAnswer": "You should slow down and be more careful because they may move suddenly.",
+    "incorrectAnswers": [
+      "You should ignore them and pay attention to the rear vision mirror.",
+      "You should reduce your speed by 5 km/h."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Are you permitted to park on a median strip or traffic island?",
+    "correctAnswer": "No, not at any time",
+    "incorrectAnswers": [
+      "Yes, but for no more than 30 minutes",
+      "Yes, in daylight hours"
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "This sign means you should:",
+    "correctAnswer": "Pass to the left of the sign.",
+    "incorrectAnswers": [
+      "Drive carefully, roundabout ahead.",
+      "Turn left at next street."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "What does this sign mean?",
+    "correctAnswer": "You may travel only in the direction in which the arrow is pointing.",
+    "incorrectAnswers": [
+      "One lane bridge ahead, slow down.",
+      "No left turn."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Driving faster than the maximum speed limit is:",
+    "correctAnswer": "Never legally permitted.",
+    "incorrectAnswers": [
+      "Only permitted when other vehicles are going faster than the speed limit.",
+      "Permitted only when passing another vehicle."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When you see this sign you must:",
+    "correctAnswer": "Stop at the stop line and give way to all traffic.",
+    "incorrectAnswers": [
+      "Stop at the stop line and give way to all traffic on your right only.",
+      "Slow down and be prepared to stop only if there is any danger of a collision with another vehicle or pedestrian."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Signalling is:",
+    "correctAnswer": "Always required before turning or lane changing.",
+    "incorrectAnswers": [
+      "Not required when turning at traffic lights with a green arrow.",
+      "Not required when turning at T-intersections."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When passengers get in the car and do not put their seat belts on, the safest thing to do is:",
+    "correctAnswer": "Tell them the car has seat belts and they should wear them.",
+    "incorrectAnswers": [
+      "Drive slower than you normally would so the passengers are safe.",
+      "Say nothing because it's the passengers' responsibility to wear their seat belts."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "If you are affected by a legal drug, such as a medicine (e.g. cold or allergy tablets):",
+    "correctAnswer": "You must not drive.",
+    "incorrectAnswers": [
+      "You may drive only in daylight hours.",
+      "You must have a passenger to help you drive."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "What does this sign mean?",
+    "correctAnswer": "Vehicles carrying three or more people, and motorcycles may use this lane.",
+    "incorrectAnswers": [
+      "Motor cars carrying one passenger may use this lane.",
+      "This lane is reserved for bicycle riders only."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Temporary traffic lights at road works:",
+    "correctAnswer": "Must be obeyed.",
+    "incorrectAnswers": [
+      "Are installed to warn motorists of construction works.",
+      "Apply to road works vehicles only."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You are in car marked A. You wish to overtake car marked B. You should:",
+    "correctAnswer": "Wait behind car B until it moves into the left lane.",
+    "incorrectAnswers": [
+      "Cross the line and overtake only if it is safe.",
+      "Cross the unbroken single line and overtake."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "A friend lends you a van that has seats for ten passengers. What type of licence do you need to drive this type of vehicle?",
+    "correctAnswer": "A car licence.",
+    "incorrectAnswers": [
+      "A heavy rigid vehicle licence.",
+      "A small bus licence."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Looking at the diagrams, how far from the approach side of a bus stop or a railway crossing are you allowed to stand or park your vehicle?",
+    "correctAnswer": "At least 20 metres.",
+    "incorrectAnswers": [
+      "At least 5 metres.",
+      "At least 10 metres",
+      "At least 50 metres."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You drive towards these people on the road. What should you do?",
+    "correctAnswer": "Stop and give way if there is any danger of hitting them.",
+    "incorrectAnswers": [
+      "Continue at the same speed and sound the horn.",
+      "Slow down until they are half way through the crossing and drive on."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Which of the following statements is correct?",
+    "correctAnswer": "You must give way to pedestrians if there is a danger of a collision.",
+    "incorrectAnswers": [
+      "You do not have to give way to adults crossing at children's crossings.",
+      "Pedestrians must cross the road only at marked crossings and intersections."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "What does this sign mean?",
+    "correctAnswer": "Railway level crossing ahead, slow down and look out for trains, be prepared to stop.",
+    "incorrectAnswers": [
+      "Give way sign ahead, slow down and be prepared to stop.",
+      "Cattle or sheep crossing the road ahead, drive slowly."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "To turn back into the same road from which you joined this roundabout you must:",
+    "correctAnswer": "Stay in the right lane all the way round.",
+    "incorrectAnswers": [
+      "Use the left lane all the way round.",
+      "Move into the left lane to leave the roundabout."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Before changing lanes you should:",
+    "correctAnswer": "Signal in plenty of time, check your mirrors and look over your shoulder for other vehicles.",
+    "incorrectAnswers": [
+      "Speed up so you are going faster than the traffic in the other lane.",
+      "Signal for at least two seconds and quickly change lanes."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "If a STOP or GIVE WAY sign has been knocked down, for example, as the result of an accident, does the line marked across the road have any meaning?",
+    "correctAnswer": "Yes, it has the same meaning as the sign itself.",
+    "incorrectAnswers": [
+      "No, you only need to give way to the vehicle on your right.",
+      "No, but you must give way if turning."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "Before getting out of your vehicle you must:",
+    "correctAnswer": "Check your mirrors and blind spots for pedestrians, bicycles or other vehicles.",
+    "incorrectAnswers": [
+      "Check your headlights are turned off.",
+      "Check your seatbelt is back in place."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "This bridge has only just enough room for two vehicles. As you come close to it you should:",
+    "correctAnswer": "Slow down and pay extra attention.",
+    "incorrectAnswers": [
+      "Maintain your speed, keeping to the limit.",
+      "Sound your horn to warn the other driver."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You are in car A and want to turn right at this intersection. Car B facing you is also indicating to turn right. What path should you take?",
+    "correctAnswer": "Both pass in front of each other.",
+    "incorrectAnswers": [
+      "Choose either depending on the traffic.",
+      "Pass behind each other."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "When you see this sign you should:",
+    "correctAnswer": "Come to a complete stop, look both ways for trains and proceed with caution if no trains are approaching.",
+    "incorrectAnswers": [
+      "Stop, only if a train is at the crossing.",
+      "Slow down, then drive slowly over the crossing looking both ways for trains."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "You are going to turn right from a one-way street. Where should you be when you start your turn?",
+    "correctAnswer": "Position R. As close as possible to the right side of the road.",
+    "incorrectAnswers": [
+      "Position M. From the middle of the road.",
+      "Any position if it is safe to do so."
+    ]
+  },
+  {
+    "category": "A",
+    "type": "multiple",
+    "question": "The faster the vehicle in front of you is travelling, the:",
+    "correctAnswer": "More distance and time you need to overtake.",
+    "incorrectAnswers": [
+      "Less time you need to overtake.",
+      "Closer you must get before starting to overtake."
+    ]
+  }
+]
