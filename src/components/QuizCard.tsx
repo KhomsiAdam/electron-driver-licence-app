@@ -11,13 +11,14 @@ interface Iprops {
 
 export default function QuizCard(data: Iprops) {
   const { updateScore } = useContext(QuizContext);
-  const options = [...data.quiz.incorrectAnswers, data.quiz.correctAnswer].sort(
-    () => Math.random() - 0.5
-  );
+  const options = [...data.quiz.incorrectAnswers, data.quiz.correctAnswer];
+    // .sort(
+    // () => Math.random() - 0.5
+  // );
 
   const handleClick = (evt: any) => {
     data.changeQuiz();
-
+     
     updateScore(evt.target.value === data.quiz.correctAnswer);
   };
   return (

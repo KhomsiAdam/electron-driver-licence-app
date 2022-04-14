@@ -11,6 +11,8 @@ export interface Iquiz {
   incorrectAnswers: string[];
   question: string;
   type: string;
+
+
 }
 
 export default function Home() {
@@ -19,6 +21,7 @@ export default function Home() {
   const [endQuiz, setEndQuiz] = useState<boolean>(false);
   const [currentQuizInd, setCurrentQuizInd] = useState<number>(0);
   const { resetScore } = useContext(QuizContext);
+const [counter, setCounter] = useState<number>(10);
 
   const fetchQuiz = async () => {
     resetScore();
@@ -33,9 +36,15 @@ export default function Home() {
   useEffect(() => {
     fetchQuiz();
   }, []);
+
+  
+ 
+   
+
   return (
     <>
       {endQuiz && <Overlay resartQuiz={fetchQuiz} />}
+      
       <div className='container px-4 mx-auto md:px-16'>
         {isLoaded ? (
           <div>
@@ -44,7 +53,10 @@ export default function Home() {
               setCurrentQuizInd={setCurrentQuizInd}
               currentQuizInd={currentQuizInd}
               setEndQuiz={setEndQuiz}
-            />
+              counter={counter}
+              setCounter={function (prev: any): void {
+                throw new Error('Function not implemented.');
+              } }            />
           </div>
         ) : (
           <div className='fixed top-0 bottom-0 left-0 right-0 z-50 flex flex-col items-center justify-center w-full h-screen overflow-hidden bg-gray-700 opacity-75'>
