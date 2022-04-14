@@ -10,7 +10,7 @@ export default function ScoreCard({
   quizzes,
 }: IProps) {
   return (
-    <div className='relative flex flex-col items-end text-2xl score-card'>
+    <div className='container relative flex flex-col items-end mx-auto text-2xl score-card'>
       <div className='my-2'>
         Score: <span className='ml-4'>{totalScore}</span>{' '}
       </div>

@@ -5,7 +5,7 @@ import Home from './pages/Home';
 
 const App: FC = () => {
   return (
-    <main className='h-screen bg-lightBlue'>
+    <main className='flex flex-col justify-center h-screen'>
       <QuizProvider>
         <Home />
       </QuizProvider>

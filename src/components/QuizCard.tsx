@@ -22,16 +22,22 @@ export default function QuizCard(data: Iprops) {
   };
   return (
     <>
-      <div className='w-full p-6 my-16 rounded-md shadow-lg card'>
-        <p className='md:text:2xl'>
-          {`Q.${data?.currentQuiz + 1} ${data?.quiz?.question}`}
+      <div className='container grid w-full gap-8 p-6 mx-auto my-16'>
+        <p className='text-2xl font-bold text-center uppercase select-none text-primary-500'>
+          Type: A
         </p>
-        <div className='grid grid-cols-2 gap-8 mt-4 options'>
+        <p className='text-lg font-medium text-center text-gray-700 select-none'>
+          {`${data?.currentQuiz + 1} / 40`}
+        </p>
+        <p className='text-2xl font-bold text-center text-gray-800 select-none'>
+          {data?.quiz?.question}
+        </p>
+        <div className='grid gap-8 mt-4 options'>
           {options.map((opt, i: number) => {
             return (
               <button
                 key={i}
-                className='py-3 text-sm text-gray-100 translate-y-24 bg-gray-800 rounded-lg hover:bg-gray-600 hover:'
+                className='py-3 text-base font-normal text-gray-800 select-none btn-secondary hover:font-bold'
                 value={opt}
                 onClick={handleClick}
               >
@@ -42,10 +48,10 @@ export default function QuizCard(data: Iprops) {
         </div>
         <div className='flex justify-end my-3'>
           <button
-            className='w-40 py-4 text-gray-200 bg-red-400 rounded-md hover:bg-red-500'
+            className='w-40 py-3 select-none btn-primary'
             onClick={() => data.changeQuiz()}
           >
-            SKIP
+            Skip
           </button>
         </div>
       </div>
