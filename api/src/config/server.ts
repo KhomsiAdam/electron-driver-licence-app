@@ -9,7 +9,7 @@ import xss from 'xss-clean';
 import hpp from 'hpp';
 
 import endpoints from '../config/router';
-import { morgan, notFound, errorHandler, limiter } from '../middlewares';
+import { morgan, notFound, errorHandler } from '../middlewares';
 import { log } from '../services/logger.service';
 
 const serverPort = process.env.PORT || 4000;
@@ -29,8 +29,8 @@ export const initializeExpress = (): void => {
   );
   server.use(compression());
   server.use(cookieParser());
-  server.use('/api', limiter);
-  server.use(express.json({ limit: '10kb' }));
+  // server.use('/api', limiter);
+  // server.use(express.json({ limit: '10kb' }));
   // server.use(express.urlencoded({ extended: false }));
   server.use(mongoSanitize());
   server.use(xss());

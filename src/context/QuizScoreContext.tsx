@@ -26,7 +26,7 @@ export const QuizProvider = (props: any) => {
   const resetScore = () => {
     setTotalScore(0);
   };
-
+  
   return (
     <QuizContext.Provider value={{ totalScore, updateScore, resetScore, tries, setTries }}>
       {props.children}

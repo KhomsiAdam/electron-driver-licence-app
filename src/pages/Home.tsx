@@ -20,6 +20,7 @@ export default function Home() {
   const [currentQuizInd, setCurrentQuizInd] = useState<number>(0);
   const [type, setType] = useState<string>('');
   const { resetScore, tries, setTries } = useContext(QuizContext);
+  const [counter, setCounter] = useState<number>(10);
 
   const fetchQuiz = async () => {
     setTries(tries - 1);
@@ -35,7 +36,7 @@ export default function Home() {
   useEffect(() => {
     fetchQuiz();
   }, []);
-  
+
   return (
     <>
       {endQuiz && <Overlay restartQuiz={fetchQuiz} />}
@@ -43,7 +44,9 @@ export default function Home() {
         <>
           {type === '' ? (
             <>
-              <button value='A' onClick={(e: any) => setType(e.target.value)}>Pick a type</button>
+              <button value='A' onClick={(e: any) => setType(e.target.value)}>
+                Pick a type
+              </button>
             </>
           ) : (
             <>
@@ -52,6 +55,10 @@ export default function Home() {
                 setCurrentQuizInd={setCurrentQuizInd}
                 currentQuizInd={currentQuizInd}
                 setEndQuiz={setEndQuiz}
+                counter={counter}
+                setCounter={function (prev: any): void {
+                  throw new Error('Function not implemented.');
+                }}
               />
             </>
           )}
