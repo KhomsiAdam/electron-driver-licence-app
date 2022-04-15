@@ -15,6 +15,8 @@ interface AppContextInterface {
   setCurrentQuizInd: (prev: any) => void;
   quizzes: Iquiz[];
   setQuizzes: (quizzes: Iquiz[]) => void;
+  token: string;
+  setToken: (token: string) => void;
 }
 const QuizContext = createContext<AppContextInterface>({
   totalScore: 0,
@@ -30,6 +32,8 @@ const QuizContext = createContext<AppContextInterface>({
   setCurrentQuizInd: () => {},
   quizzes: [],
   setQuizzes: () => {},
+  token: '',
+  setToken: () => {},
 });
 
 export const QuizProvider = (props: any) => {
@@ -39,6 +43,8 @@ export const QuizProvider = (props: any) => {
   const [endQuiz, setEndQuiz] = useState<boolean>(false);
   const [currentQuizInd, setCurrentQuizInd] = useState<number>(0);
   const [quizzes, setQuizzes] = useState<Iquiz[]>([]);
+  // usestate for token
+  const [token, setToken] = useState<string>('');
 
   const updateScore = (isCorrect: boolean) => {
     if (isCorrect) {
@@ -65,6 +71,8 @@ export const QuizProvider = (props: any) => {
         setCurrentQuizInd,
         quizzes,
         setQuizzes,
+        token,
+        setToken,
       }}
     >
       {props.children}

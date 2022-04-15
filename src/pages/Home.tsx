@@ -16,6 +16,7 @@ export interface Iquiz {
 }
 
 export default function Home() {
+  const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [type, setType] = useState<string>('');
   const {
@@ -44,7 +45,6 @@ export default function Home() {
   useEffect(() => {
     fetchQuiz();
   }, []);
-  const navigate = useNavigate();
 
   return (
     <>
