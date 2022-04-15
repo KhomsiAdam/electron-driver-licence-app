@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { Iquiz } from '../pages/Home';
 
 interface AppContextInterface {
   totalScore: number;
@@ -6,6 +7,14 @@ interface AppContextInterface {
   resetScore: () => void;
   tries: number;
   setTries: (n: number) => void;
+  counter: number;
+  setCounter: (n: number) => void;
+  endQuiz: boolean;
+  setEndQuiz: (isOver: boolean) => void;
+  currentQuizInd: number;
+  setCurrentQuizInd: (prev: any) => void;
+  quizzes: Iquiz[];
+  setQuizzes: (quizzes: Iquiz[]) => void;
 }
 const QuizContext = createContext<AppContextInterface>({
   totalScore: 0,
@@ -13,12 +22,24 @@ const QuizContext = createContext<AppContextInterface>({
   resetScore: () => {},
   tries: 2,
   setTries: () => {},
+  counter: 0,
+  setCounter: () => {},
+  endQuiz: false,
+  setEndQuiz: () => {},
+  currentQuizInd: 0,
+  setCurrentQuizInd: () => {},
+  quizzes: [],
+  setQuizzes: () => {},
 });
 
 export const QuizProvider = (props: any) => {
   const [totalScore, setTotalScore] = useState<number>(0);
   const [tries, setTries] = useState<number>(2);
-  
+  const [counter, setCounter] = useState<number>(0);
+  const [endQuiz, setEndQuiz] = useState<boolean>(false);
+  const [currentQuizInd, setCurrentQuizInd] = useState<number>(0);
+  const [quizzes, setQuizzes] = useState<Iquiz[]>([]);
+
   const updateScore = (isCorrect: boolean) => {
     if (isCorrect) {
       setTotalScore((total: number) => total + 1);
@@ -27,9 +48,25 @@ export const QuizProvider = (props: any) => {
   const resetScore = () => {
     setTotalScore(0);
   };
-  
+
   return (
-    <QuizContext.Provider value={{ totalScore, updateScore, resetScore, tries, setTries }}>
+    <QuizContext.Provider
+      value={{
+        totalScore,
+        updateScore,
+        resetScore,
+        tries,
+        setTries,
+        counter,
+        setCounter,
+        endQuiz,
+        setEndQuiz,
+        currentQuizInd,
+        setCurrentQuizInd,
+        quizzes,
+        setQuizzes,
+      }}
+    >
       {props.children}
     </QuizContext.Provider>
   );

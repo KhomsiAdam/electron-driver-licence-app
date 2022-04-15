@@ -4,24 +4,34 @@ import QuizContext from '../context/QuizScoreContext';
 import CrossProcessExports from 'electron';
 
 interface Iprops {
-  quiz: Iquiz;
-  key: any;
-  changeQuiz: () => void;
   currentQuiz: number;
   type: string;
 }
 
 export default function QuizCard(data: Iprops) {
-  const { updateScore } = useContext(QuizContext);
+  const { updateScore, setCounter, setEndQuiz, currentQuizInd, setCurrentQuizInd, quizzes } = useContext(QuizContext);
+  const [options, setOptions] = useState<any>();
 
-  const options = [...data.quiz.incorrectAnswers, data.quiz.correctAnswer];
-  // .sort(
-  //   () => Math.random() - 0.5
-  // );
+  const quiz = quizzes[currentQuizInd];
+
+  const changeQuiz = () => {
+    if (currentQuizInd < quizzes.length - 1) {
+      setCurrentQuizInd((n: number) => n + 1);
+      setCounter(0);
+    } else if (currentQuizInd === quizzes.length - 1) {
+      setEndQuiz(true);
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    setOptions([...quiz.incorrectAnswers, quiz.correctAnswer].sort( () => Math.random() - 0.5 ));
+  }, [quiz, setOptions])
 
   const handleClick = (evt: any) => {
-    data.changeQuiz();
-    updateScore(evt.target.value === data.quiz.correctAnswer);
+    changeQuiz();
+    updateScore(evt.target.value === quiz.correctAnswer);
   };
 
   return (
@@ -34,11 +44,11 @@ export default function QuizCard(data: Iprops) {
           {`${data?.currentQuiz + 1} / 40`}
         </p>
         <p className='text-2xl font-bold text-center text-gray-800 select-none'>
-          {data?.quiz?.question}
+          {quiz?.question}
         </p>
         <div className='grid gap-8 mt-4 options'>
           {options &&
-            options.map((opt, i: number) => {
+            options.map((opt: any, i: number) => {
               return (
                 <button
                   key={i}
@@ -54,7 +64,7 @@ export default function QuizCard(data: Iprops) {
         <div className='flex justify-end my-3'>
           <button
             className='w-40 py-3 select-none btn-primary'
-            onClick={() => data.changeQuiz()}
+            onClick={() => changeQuiz()}
           >
             Skip
           </button>

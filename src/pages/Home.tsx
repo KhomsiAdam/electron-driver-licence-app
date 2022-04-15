@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import QuizContainer from '../components/QuizContainer';
 import Overlay from '../components/Overlay';
 import QuizContext from '../context/QuizScoreContext';
+import ScoreCard from '../components/ScoreCard';
+import QuizCard from '../components/QuizCard';
 
 const apiUrl = 'http://localhost:4000/api';
 
@@ -14,13 +16,19 @@ export interface Iquiz {
 }
 
 export default function Home() {
-  const [quizess, setQuizess] = useState<Iquiz[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [endQuiz, setEndQuiz] = useState<boolean>(false);
-  const [currentQuizInd, setCurrentQuizInd] = useState<number>(0);
   const [type, setType] = useState<string>('');
-  const { resetScore, tries, setTries } = useContext(QuizContext);
-  const [counter, setCounter] = useState<number>(10);
+  const {
+    totalScore,
+    resetScore,
+    tries,
+    setTries,
+    endQuiz,
+    setEndQuiz,
+    currentQuizInd,
+    setCurrentQuizInd,
+    setQuizzes,
+  } = useContext(QuizContext);
 
   const fetchQuiz = async () => {
     setTries(tries - 1);
@@ -29,7 +37,7 @@ export default function Home() {
     setEndQuiz(false);
     const response = await fetch(`${apiUrl}/quiz`);
     const res = await response.json();
-    setQuizess(res);
+    setQuizzes(res);
     setIsLoaded(true);
     setCurrentQuizInd(0);
   };
@@ -80,12 +88,12 @@ export default function Home() {
             </>
           ) : (
             <>
-              <QuizContainer
-                quizess={quizess}
-                setCurrentQuizInd={setCurrentQuizInd}
-                currentQuizInd={currentQuizInd}
-                setEndQuiz={setEndQuiz}
-                counter={counter}
+              {/* <QuizContainer quizzes={quizzes} type={type} /> */}
+              <ScoreCard />
+              <QuizCard
+                // quiz={quizzes[currentQuizInd]}
+                // quizzes={quizzes}
+                currentQuiz={currentQuizInd}
                 type={type}
               />
             </>
