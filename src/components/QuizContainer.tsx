@@ -1,8 +1,8 @@
-import ScoreCard from "./ScoreCard";
-import QuizCard from "./QuizCard";
-import { useContext, useEffect, useState } from "react";
-import { Iquiz } from "../pages/Home";
-import QuizContext from "../context/QuizScoreContext";
+import ScoreCard from './ScoreCard';
+import QuizCard from './QuizCard';
+import { useContext, useEffect, useState } from 'react';
+import { Iquiz } from '../pages/Home';
+import QuizContext from '../context/QuizScoreContext';
 
 interface IProps {
   quizess: Iquiz[];
@@ -10,7 +10,7 @@ interface IProps {
   currentQuizInd: number;
   setCurrentQuizInd: (prev: any) => void;
   counter: number;
-  setCounter: (prev: any) => void;
+  type: string;
 }
 
 export default function QuizContainer({
@@ -18,13 +18,14 @@ export default function QuizContainer({
   setEndQuiz,
   currentQuizInd,
   setCurrentQuizInd,
+  type,
 }: IProps) {
   const { totalScore } = useContext(QuizContext);
-  const [counter, setCounter] = useState<number>(10);
+  const [counter, setCounter] = useState<number>(0);
   const changeQuiz = () => {
     if (currentQuizInd < quizess.length - 1) {
       setCurrentQuizInd((n: number) => n + 1);
-      setCounter(10);
+      setCounter(0);
     } else if (currentQuizInd === quizess.length - 1) {
       setEndQuiz(true);
     } else {
@@ -36,15 +37,15 @@ export default function QuizContainer({
     //timer for each quiz with
     const interval = setInterval(() => {
       if (currentQuizInd < quizess.length - 1) {
-        setCounter(counter - 1);
+        setCounter(counter + 1);
       } else {
         return;
       }
     }, 1000);
     if (currentQuizInd === quizess.length - 1) {
       setEndQuiz(true);
-    } else if (counter === 0) {
-      setCounter(10);
+    } else if (counter === 11) {
+      setCounter(0);
       setCurrentQuizInd((n: number) => n + 1);
     }
 
@@ -53,21 +54,22 @@ export default function QuizContainer({
     };
   });
 
-    return (
-      <>
-          <ScoreCard
-            currentQuiz={currentQuizInd}
-            totalScore={totalScore}
-            quizzes={quizess}
-            counter={counter}
-            setCounter={setCounter} />
-          <QuizCard
-            key={Math.random()}
-            quiz={quizess[currentQuizInd]}
-            changeQuiz={changeQuiz}
-            currentQuiz={currentQuizInd} />
-      
-      </>
-    );
-  
+  return (
+    <>
+      <ScoreCard
+        currentQuiz={currentQuizInd}
+        totalScore={totalScore}
+        quizzes={quizess}
+        counter={counter}
+        setCounter={setCounter}
+      />
+      <QuizCard
+        key={Math.random()}
+        quiz={quizess[currentQuizInd]}
+        changeQuiz={changeQuiz}
+        currentQuiz={currentQuizInd}
+        type={type}
+      />
+    </>
+  );
 }

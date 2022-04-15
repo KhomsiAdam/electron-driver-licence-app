@@ -1,3 +1,13 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
-module.exports = [new ForkTsCheckerWebpackPlugin()];
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const assets = ['images'];
+module.exports = [new ForkTsCheckerWebpackPlugin(),
+new CopyWebpackPlugin({
+  patterns: [
+    {
+      from: path.join(__dirname, 'src/assets'),
+      to: 'assets/',
+    },
+  ],
+}),];

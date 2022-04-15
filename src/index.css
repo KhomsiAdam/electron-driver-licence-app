@@ -20,3 +20,8 @@ body {
     @apply bg-secondary-200 rounded-full min-w-[90px] py-2 px-4 text-white font-bold lg:hover:bg-secondary-500;
   }
 }
+
+.progress-bar {
+	background: linear-gradient(to left, #be3459, #eda9a9);
+	box-shadow: 0 3px 3px -5px #be3459, 0 2px 5px #be3459;
+}

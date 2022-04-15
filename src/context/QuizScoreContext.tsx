@@ -18,6 +18,7 @@ const QuizContext = createContext<AppContextInterface>({
 export const QuizProvider = (props: any) => {
   const [totalScore, setTotalScore] = useState<number>(0);
   const [tries, setTries] = useState<number>(2);
+  
   const updateScore = (isCorrect: boolean) => {
     if (isCorrect) {
       setTotalScore((total: number) => total + 1);

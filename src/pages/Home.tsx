@@ -44,9 +44,39 @@ export default function Home() {
         <>
           {type === '' ? (
             <>
-              <button value='A' onClick={(e: any) => setType(e.target.value)}>
-                Pick a type
-              </button>
+              <div className='mb-8 text-2xl font-bold text-center text-primary-500'>
+                Pick a Driver Licence type:
+              </div>
+              <div className='grid grid-cols-4 mx-auto place-content-center w-fit'>
+                <button
+                  className='h-[150px] w-[150px] border-white border-8 bg-gray-100 hover:bg-secondary-200 rounded-full outline-dashed outline-secondary-500 hover:scale-110 transition-all shadow-xl mx-4'
+                  value='A'
+                  onClick={(e: any) => setType(e.target.value)}
+                >
+                  <img src='assets/images/bike.png' alt='Driver Licence A' />
+                </button>
+                <button
+                  className='h-[150px] w-[150px] border-white border-8 bg-gray-100 hover:bg-secondary-200 rounded-full outline-dashed outline-secondary-500 hover:scale-110 transition-all shadow-xl mx-4'
+                  value='B'
+                  onClick={(e: any) => setType(e.target.value)}
+                >
+                  <img src='assets/images/car.png' alt='Driver Licence B' />
+                </button>
+                <button
+                  className='h-[150px] w-[150px] border-white border-8 bg-gray-100 hover:bg-secondary-200 rounded-full outline-dashed outline-secondary-500 hover:scale-110 transition-all shadow-xl mx-4'
+                  value='C'
+                  onClick={(e: any) => setType(e.target.value)}
+                >
+                  <img src='assets/images/truck.png' alt='Driver Licence C' />
+                </button>
+                <button
+                  className='h-[150px] w-[150px] border-white border-8 bg-gray-100 hover:bg-secondary-200 rounded-full outline-dashed outline-secondary-500 hover:scale-110 transition-all shadow-xl mx-4'
+                  value='D'
+                  onClick={(e: any) => setType(e.target.value)}
+                >
+                  <img src='assets/images/bus.png' alt='Driver Licence D' />
+                </button>
+              </div>
             </>
           ) : (
             <>
@@ -56,9 +86,7 @@ export default function Home() {
                 currentQuizInd={currentQuizInd}
                 setEndQuiz={setEndQuiz}
                 counter={counter}
-                setCounter={function (prev: any): void {
-                  throw new Error('Function not implemented.');
-                }}
+                type={type}
               />
             </>
           )}
