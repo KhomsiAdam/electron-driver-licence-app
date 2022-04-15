@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
-import QuizContainer from '../components/QuizContainer';
 import Overlay from '../components/Overlay';
 import QuizContext from '../context/QuizScoreContext';
 import ScoreCard from '../components/ScoreCard';
 import QuizCard from '../components/QuizCard';
+import { useNavigate } from 'react-router-dom';
 
 const apiUrl = 'http://localhost:4000/api';
 
@@ -44,6 +44,7 @@ export default function Home() {
   useEffect(() => {
     fetchQuiz();
   }, []);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -52,6 +53,7 @@ export default function Home() {
         <>
           {type === '' ? (
             <>
+              <button onClick={() => navigate('/login')}>Login</button>
               <div className='mb-8 text-2xl font-bold text-center text-primary-500'>
                 Pick a Driver Licence type:
               </div>

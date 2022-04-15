@@ -31,7 +31,6 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<FormInputs>({
     resolver: yupResolver(schema),
@@ -44,9 +43,9 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        });
+      },
+      body: JSON.stringify(data),
+    });
     const res = await response.json();
     console.log(res);
   };
@@ -151,12 +150,8 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
                   </p>
                 </div>
               </div>
-
               <div className='flex justify-end'>
-                <button
-                  className='w-full py-3 mt-4 text-lg select-none btn-primary'
-                  onClick={() => console.log('submit')}
-                >
+                <button className='w-full py-3 mt-4 text-lg select-none btn-primary'>
                   Submit
                 </button>
               </div>

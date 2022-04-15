@@ -50,7 +50,7 @@ export const register = catchErrors(async (req: Request, res: Response, next: Ne
 
 // Login logic
 export const login = catchErrors(async (req: Request, res: Response, next: NextFunction) => {
-  // Login validation
+  // Login validation  
   const { error } = loginSchema.validate(req.body);
   if (error) {
     res.status(422);

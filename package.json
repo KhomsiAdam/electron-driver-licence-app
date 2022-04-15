@@ -23,7 +23,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "my_new_app"
+            "name": "driver_licence_app"
           }
         },
         {
@@ -92,6 +92,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.29.0",
+    "react-router-dom": "^6.3.0",
     "yup": "^0.32.11"
   }
 }

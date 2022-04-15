@@ -30,7 +30,7 @@ export const initializeExpress = (): void => {
   server.use(compression());
   server.use(cookieParser());
   // server.use('/api', limiter);
-  // server.use(express.json({ limit: '10kb' }));
+  server.use(express.json({ limit: '10kb' }));
   // server.use(express.urlencoded({ extended: false }));
   server.use(mongoSanitize());
   server.use(xss());

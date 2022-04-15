@@ -1,14 +1,16 @@
 import { FC } from 'react';
-import { QuizProvider } from './context/QuizScoreContext';
+import { Routes, Route } from 'react-router-dom';
 import './index.css';
 import Home from './pages/Home';
+import Login from './pages/Login';
 
 const App: FC = () => {
   return (
     <main className='flex flex-col justify-center h-screen'>
-      <QuizProvider>
-        <Home />
-      </QuizProvider>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
     </main>
   );
 };
