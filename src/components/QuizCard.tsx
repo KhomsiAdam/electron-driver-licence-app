@@ -1,15 +1,20 @@
-import { Iquiz } from '../pages/Home';
 import { useContext, useEffect, useState } from 'react';
 import QuizContext from '../context/QuizScoreContext';
-import CrossProcessExports from 'electron';
 
 interface Iprops {
   currentQuiz: number;
-  type: string;
 }
 
 export default function QuizCard(data: Iprops) {
-  const { updateScore, setCounter, setEndQuiz, currentQuizInd, setCurrentQuizInd, quizzes } = useContext(QuizContext);
+  const {
+    updateScore,
+    setCounter,
+    setEndQuiz,
+    currentQuizInd,
+    setCurrentQuizInd,
+    quizzes,
+    type,
+  } = useContext(QuizContext);
   const [options, setOptions] = useState<any>();
 
   const quiz = quizzes[currentQuizInd];
@@ -26,8 +31,12 @@ export default function QuizCard(data: Iprops) {
   };
 
   useEffect(() => {
-    setOptions([...quiz.incorrectAnswers, quiz.correctAnswer].sort( () => Math.random() - 0.5 ));
-  }, [quiz, setOptions])
+    setOptions(
+      [...quiz.incorrectAnswers, quiz.correctAnswer].sort(
+        () => Math.random() - 0.5
+      )
+    );
+  }, [quiz, setOptions]);
 
   const handleClick = (evt: any) => {
     changeQuiz();
@@ -38,7 +47,7 @@ export default function QuizCard(data: Iprops) {
     <>
       <div className='container grid w-full gap-8 p-6 mx-auto my-16'>
         <p className='text-2xl font-bold text-center uppercase select-none text-primary-500'>
-          Type: {data.type}
+          Type: {type}
         </p>
         <p className='text-lg font-medium text-center text-gray-700 select-none'>
           {`${data?.currentQuiz + 1} / 40`}
