@@ -28,12 +28,17 @@ export default function Home() {
     currentQuizInd,
     setCurrentQuizInd,
     setQuizzes,
+    setCounter,
     type,
     setType,
   } = useContext(QuizContext);
 
   const reset = () => {
     setType('');
+    resetScore();
+    setCurrentQuizInd(0);
+    setEndQuiz(false);
+    setCounter(0);
     navigate('/');
   };
 
@@ -83,33 +88,25 @@ export default function Home() {
               </div>
               <div className='grid grid-cols-4 mx-auto place-content-center w-fit'>
                 <button
-                  className='h-[150px] w-[150px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
+                  className='bg-[url("assets/images/bike.png")] bg-no-repeat bg-center h-[200px] w-[200px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
                   value='A'
                   onClick={(e: any) => setType(e.target.value)}
-                >
-                  <img src='assets/images/bike.png' alt='Driver Licence A' />
-                </button>
+                />
                 <button
-                  className='h-[150px] w-[150px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
+                  className='bg-[url("assets/images/car.png")] bg-no-repeat bg-center h-[200px] w-[200px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
                   value='B'
                   onClick={(e: any) => setType(e.target.value)}
-                >
-                  <img src='assets/images/car.png' alt='Driver Licence B' />
-                </button>
+                />
                 <button
-                  className='h-[150px] w-[150px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
+                  className='bg-[url("assets/images/truck.png")] bg-no-repeat bg-center h-[200px] w-[200px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
                   value='C'
                   onClick={(e: any) => setType(e.target.value)}
-                >
-                  <img src='assets/images/truck.png' alt='Driver Licence C' />
-                </button>
+                />
                 <button
-                  className='h-[150px] w-[150px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
+                  className='bg-[url("assets/images/bus.png")] bg-no-repeat bg-center h-[200px] w-[200px] border-white border-8 bg-primary-100 hover:bg-primary-300 rounded-full outline-dashed outline-primary-400 hover:scale-110 transition-all shadow-xl mx-4'
                   value='D'
                   onClick={(e: any) => setType(e.target.value)}
-                >
-                  <img src='assets/images/bus.png' alt='Driver Licence D' />
-                </button>
+                />
               </div>
             </>
           ) : (
