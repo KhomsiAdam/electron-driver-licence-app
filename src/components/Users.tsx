@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import moment from 'moment';
 import QuizContext from '../context/QuizScoreContext';
 import Spinner from './Spinner';
-
-const apiUrl = 'http://localhost:4000/api';
+import { apiUrl } from '../../constants';
 
 const Users = () => {
   const { token, setToken } = useContext(QuizContext);
@@ -15,7 +14,6 @@ const Users = () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // if response 200 then set users else clear token
     if (response.status === 200) {
       const res = await response.json();
       setUsers(res);

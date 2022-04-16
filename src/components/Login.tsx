@@ -3,8 +3,7 @@ import { useContext, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import QuizContext from '../context/QuizScoreContext';
 import * as yup from 'yup';
-
-const apiUrl = 'http://localhost:4000/api';
+import { apiUrl } from '../../constants';
 
 interface LoginInputs {
   email: string;
@@ -17,7 +16,7 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
-  const { token, setToken } = useContext(QuizContext);
+  const { setToken } = useContext(QuizContext);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -34,7 +33,6 @@ const Login = () => {
   });
 
   const onSubmit: SubmitHandler<LoginInputs> = async (data: any) => {
-    console.log('data submitted: ', data);
     const response = await fetch(`${apiUrl}/login`, {
       method: 'POST',
       headers: {
@@ -43,13 +41,12 @@ const Login = () => {
       body: JSON.stringify(data),
     });
     const res = await response.json();
-    console.log(res);
     localStorage.setItem('token', res.token);
   };
 
   return (
     <form
-      className='container mx-auto w-[70%]'
+      className='container max-w-lg mx-auto'
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className='grid grid-cols-1 gap-4'>
@@ -81,10 +78,7 @@ const Login = () => {
         </p>
       </div>
       <div className='flex justify-end'>
-        <button
-          className='w-full py-3 mt-4 text-lg select-none btn-primary'
-          onClick={() => console.log('submit')}
-        >
+        <button className='w-full py-3 mt-4 text-lg select-none btn-primary'>
           Submit
         </button>
       </div>

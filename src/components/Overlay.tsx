@@ -3,8 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as yup from 'yup';
 import QuizContext from '../context/QuizScoreContext';
-
-const apiUrl = 'http://localhost:4000/api';
+import { apiUrl, minimumScore } from '../../constants';
 interface FormInputs {
   email: string;
   firstname: string;
@@ -30,7 +29,6 @@ const schema = yup.object().shape({
 export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
   const { totalScore, tries } = useContext(QuizContext);
   const [success, setSuccess] = useState<boolean>(false);
-  const minimumScore = 30;
 
   const handleInputNumbers = (e: any) => {
     // if (e.target.value.length > e.target.maxLength) {
@@ -64,7 +62,6 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
     delete data.year;
     delete data.month;
     delete data.day;
-    console.log('data submitted: ', data);
     const response = await fetch(`${apiUrl}/register`, {
       method: 'POST',
       headers: {
@@ -88,12 +85,12 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
               <div className='grid grid-cols-2 gap-4'>
                 <div className='grid grid-cols-1 gap-4'>
                   <label className='text-lg font-medium text-gray-700 select-none'>
-                    John
+                    Firstname
                   </label>
                   <input
                     className='input-primary'
                     type='text'
-                    placeholder='Firstname'
+                    placeholder='John'
                     {...register('firstname')}
                   />
                   <p className='text-lg font-medium select-none text-primary-500'>
@@ -102,12 +99,12 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
                 </div>
                 <div className='grid grid-cols-1 gap-4'>
                   <label className='text-lg font-medium text-gray-700 select-none'>
-                    Doe
+                    Lastname
                   </label>
                   <input
                     className='input-primary'
                     type='text'
-                    placeholder='Lastname'
+                    placeholder='Doe'
                     {...register('lastname')}
                   />
                   <p className='text-lg font-medium select-none text-primary-500'>
@@ -187,7 +184,7 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
                   <input
                     className='input-primary'
                     type='text'
-                    placeholder='CIN'
+                    placeholder='X123456'
                     {...register('CIN')}
                   />
                   <p className='text-lg font-medium select-none text-primary-500'>
@@ -201,7 +198,7 @@ export default function Overlay({ restartQuiz }: { restartQuiz: () => void }) {
                   <input
                     className='input-primary'
                     type='text'
-                    placeholder='Phone'
+                    placeholder='0123456789'
                     {...register('phone')}
                   />
                   <p className='text-lg font-medium select-none text-primary-500'>

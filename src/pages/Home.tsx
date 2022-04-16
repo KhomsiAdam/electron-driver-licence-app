@@ -5,8 +5,7 @@ import ScoreCard from '../components/ScoreCard';
 import QuizCard from '../components/QuizCard';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
-
-const apiUrl = 'http://localhost:4000/api';
+import { apiUrl } from '../../constants';
 
 export interface Iquiz {
   category: string;

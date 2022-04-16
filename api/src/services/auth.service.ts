@@ -47,41 +47,6 @@ export const unAuthorized = (res: Response, next: NextFunction) => {
   next(error);
 };
 
-// const is = {
-//   Auth: async (req: Request, res: Response, next: NextFunction) => {
-//     const authHeader = req.get('Authorization');
-//     if (!authHeader?.startsWith('Bearer ')) return unAuthorized(res, next);
-//     const token = authHeader?.split(' ')[1];
-//     if (!token) return unAuthorized(res, next);
-//     jwt.verify(token!, JWT_ACCESS_SECRET as string, async (error: any, user: any) => {
-//       if (error) {
-//         res.status(403);
-//         next(error);
-//       }
-//       req.user = user;
-//       next();
-//     });
-//   },
-//   Admin: async (req: Request, res: Response, next: NextFunction) => {
-//     const authHeader = req.get('Authorization');
-//     if (!authHeader?.startsWith('Bearer ')) return unAuthorized(res, next);
-//     const token = authHeader?.split(' ')[1];
-//     if (!token) return unAuthorized(res, next);
-//     jwt.verify(token!, JWT_ACCESS_SECRET as string, async (error: any, user: any) => {
-//       if (error) {
-//         res.status(403);
-//         next(error);
-//       }
-//       if (user?.role !== 'admin') {
-//         res.status(403);
-//         next(new Error('Unauthorized.'));
-//       }
-//       req.user = user;
-//       next();
-//     });
-//   }
-// }
-
 // Is authenticated middleware
 export const isAuthenticated = async (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.get('Authorization');
@@ -117,22 +82,6 @@ export const isAdmin = async (req: Request, res: Response, next: NextFunction) =
       }
     }
   });
-  // await isAuthenticated(req, res, next);
-  // if (req.user && req.user.role === 'Admin') {
-    // const authorizedUser = await mongoose.model(req.user.role).findOne({ _id: req.user._id });
-    // if (authorizedUser) {
-    //   req.user = authorizedUser;
-    //   next();
-    // } else {
-    //   unAuthorized(res, next);
-    // }
-  //   console.log('isAdmin');
-  //   next();
-  // } else {
-  //   console.log('NotAdmin');
-  //   next();
-    // unAuthorized(res, next);
-  // }
 };
 
 // Finding the existence of a user
